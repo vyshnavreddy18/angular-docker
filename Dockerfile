@@ -14,6 +14,7 @@ RUN npm install
 RUN npx ngcc --properties es2015 --create-ivy-entry-points
 
 COPY . .
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Build the project and copy the files
 RUN npm run ng build -- --prod
